@@ -42,38 +42,43 @@ describe('User Test', () => {
 
   it('should fetch all albums', async () => { // integration testing
     const res = await request(app).get('/photos');
-    console.log(res)
     expect(res.statusCode).toEqual(200);
     // expect(res.body).toHaveProperty('post');
   });
 
-  // it('Test get Photos getAllPhotos', async () => {
-  //   const req = mockRequest();
-  //   const res = mockResponse();
-  //   await PhotoController.getAllPhotos(req, res);
-  //   expect(res.status).toHaveBeenCalledWith(200);
-  // });
+  it('Test get Photos', async () => {
+    const req = mockRequest();
+    const res = mockResponse();
+    await PhotoController.getAllPhotos(req, res);
+    expect(res.status).toHaveBeenCalledWith(200);
+  });
+  it('Test get Photos getAllPhotos', async () => {
+    const req = mockRequest();
+    const res = mockResponse();
+    await PhotoController.getAllPhotos(req, res);
+    expect(res.status).toHaveBeenCalledWith(200);
+  });
 
-  // it('Test get Photos getOnePhotoByID', async () => {
-  //   const req = mockRequest({}, {}, {
-  //     id: 9
-  //   });
-  //   const res = mockResponse();
-  //   await PhotoController.getOnePhotoByID(req, res);
-  //   expect(res.status).toHaveBeenCalledWith(200);
-  // });
+  it('Test get Photos getOnePhotoByID', async () => {
+    const req = mockRequest({}, {}, {
+      id: 9
+    });
+    const res = mockResponse();
+    await PhotoController.getOnePhotoByID(req, res);
+    expect(res.status).toHaveBeenCalledWith(200);
+  });
 
-  // it('Test get Photos createPhoto', async () => {
-  //   const req = mockRequest({}, {
-  //     title: "Test Rian",
-  //     caption: "Test rian caption",
-  //     image_url: "https://photoliburan.com",
-  //     UserId: 1
-  //   });
-  //   const res = mockResponse();
-  //   await PhotoController.createPhoto(req, res);
-  //   expect(res.status).toHaveBeenCalledWith(200);
-  // });
+  it('Test get Photos createPhoto', async () => {
+    const req = mockRequest({}, {
+      title: "Test Rian",
+      caption: "Test rian caption",
+      image_url: "https://photoliburan.com",
+      UserId: 1
+    });
+    const res = mockResponse();
+    await PhotoController.createPhoto(req, res);
+    expect(res.status).toHaveBeenCalledWith(200);
+  });
 
   it('Test user Login', async () => {
     const req = mockRequest({}, {
